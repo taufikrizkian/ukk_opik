@@ -359,4 +359,15 @@ function pengembalian() {
   }
 }
 
+// Batal Pinjam
+function batalPinjam($Id)
+{
+  global $connection;
+
+  $queryBatalPinjam = "DELETE FROM peminjaman WHERE id = '$Id'
+  ";
+  mysqli_query($connection, $queryBatalPinjam);
+
+  return mysqli_affected_rows($connection);
+}
 
